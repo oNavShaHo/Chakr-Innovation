@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import { Chart, ChartConfiguration } 
 from "chart.js"; // Import ChartConfiguration type
 
+
 type Props = {
   data: any[];
 };
