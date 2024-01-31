@@ -44,17 +44,15 @@ const Graph: React.FC = () => {
           {data ? (
             <ul>
               <div className="flex justify-between bg-white gap-4 p-6">
-                
                 <h1>Growth</h1>
                 <div className="flex">
                   <p>Yearly</p>
                   <img src="down.svg" alt="down" />
                 </div>
-               
               </div>
               <Chart data={data} />
-              <br/>
-              <Graph2/>
+              <br />
+              <Graph2 />
             </ul>
           ) : (
             <div>Data is null</div>

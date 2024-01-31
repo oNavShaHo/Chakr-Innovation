@@ -1,9 +1,6 @@
-"use client"
+"use client";
 import React, { useEffect, useRef } from "react";
-/* eslint-disable-next-line padded-blocks */ 
- // eslint-disable-line no-console // eslint-disable-next-line no-console console.
-import { Chart, ChartConfiguration } 
-from "chart.js"; // Import ChartConfiguration type
+import { LineChart } from "@mui/x-charts";
 
 
 type Props = {
@@ -11,7 +8,7 @@ type Props = {
 };
 
 function Example({ data }: Props) {
-  const chartRef = useRef<HTMLCanvasElement>(null); // Add type annotation for chartRef
+
 
   const values: number[] = [];
   const labels: string[] = [];
@@ -21,35 +18,18 @@ function Example({ data }: Props) {
     else labels.push(data[i]);
   }
 
-  useEffect(() => {
-    if (chartRef.current) {
-      const chartConfig: ChartConfiguration = {
-        type: "line",
-        data: {
-          labels: labels,
-          datasets: [
-            {
-              data: values,
-              label: "Applied",
-              borderColor: "green",
-              backgroundColor: "rgba(0, 128, 0, 0.1)",
-              fill: false,
-              borderDash: [5, 5],
-            },
-          ],
-        },
-      };
-
-      new Chart(chartRef.current, chartConfig); // Pass chartRef.current and chartConfig
-    }
-  }, [data, labels, values]); // Include labels and values in the dependency array
-
   return (
-    <div className="bg-white">
-      
-          <canvas id="myChart" ref={chartRef}></canvas>
-       
-      
+    <div className="bg-white flex ">
+      <LineChart
+        xAxis={[{ data: labels }]}
+        series={[
+          {
+            data: values,
+          },
+        ]}
+        width={500}
+        height={300}
+      />
     </div>
   );
 }

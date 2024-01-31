@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -21,36 +21,32 @@ function Button({ imgt, imgf, ialt, text }: ButtonProps) {
   }
 
   return (
-    <div
-      className=""
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <div className="" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {isClicked ? (
         <div className="bg-[#FFF7E8]">
-        <div
-        onClick={dropdown}
-        className="flex gap-3 bg-[#FFF7E8] px-4 py-3 text-[#734A00] border-1 rounded-full"
-      >
-        <Image src={imgf} width={25} height={25} alt={ialt} />
-        <p className="text-lg">{text}</p>
-        <img className="ml-auto"  src="up.svg" alt="down"/>
+          <div
+            onClick={dropdown}
+            className="flex gap-3 bg-[#FFF7E8] px-4 py-3 text-[#734A00] border-1 rounded-full"
+          >
+            <Image src={imgf} width={25} height={25} alt={ialt} />
+            <p className="text-lg">{text}</p>
+            <img className="ml-auto" src="up.svg" alt="down" />
+          </div>
+          <div className="flex flex-col justify-center items-left px-4 py-3 gap-3">
+            <div className="flex gap-3">
+              <Image src="yoyo.svg" width={25} height={25} alt={ialt} />
+              <p className="text-lg hover:text-[#734A00]">Current</p>
+            </div>
+            <div className="flex gap-3">
+              <Image src="yoyo.svg" width={25} height={25} alt={ialt} />
+              <p className="text-lg hover:text-[#734A00]">New</p>
+            </div>
+            <div className="flex gap-3">
+              <Image src="yoyo.svg" width={25} height={25} alt={ialt} />
+              <p className="text-lg hover:text-[#734A00]">Negotiating</p>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col justify-center items-left px-4 py-3 gap-3">
-          <div className="flex gap-3">
-          <Image  src="yoyo.svg" width={25} height={25} alt={ialt} />
-        <p className="text-lg hover:text-[#734A00]">Current</p>
-        </div>
-        <div className="flex gap-3">
-          <Image  src="yoyo.svg" width={25} height={25} alt={ialt} />
-        <p className="text-lg hover:text-[#734A00]">New</p>
-        </div>
-        <div className="flex gap-3">
-          <Image  src="yoyo.svg" width={25} height={25} alt={ialt} />
-        <p className="text-lg hover:text-[#734A00]">Negotiating</p>
-        </div>
-        </div>
-      </div>
       ) : (
         (isHovering && (
           <div
@@ -59,13 +55,13 @@ function Button({ imgt, imgf, ialt, text }: ButtonProps) {
           >
             <Image src={imgf} width={25} height={25} alt={ialt} />
             <p className="text-lg">{text}</p>
-            <img className="ml-auto"  src="down.svg" alt="down"/>
+            <img className="ml-auto" src="down.svg" alt="down" />
           </div>
         )) || (
           <div className="flex px-4 py-3 gap-3 max-w-80">
             <Image src={imgt} width={25} height={25} alt={ialt} />
             <p className="text-lg">{text}</p>
-            <img className="ml-auto" src="down.svg" alt="down"/>
+            <img className="ml-auto" src="down.svg" alt="down" />
           </div>
         )
       )}

@@ -1,5 +1,4 @@
 import React from "react";
-import ApexCharts from "apexcharts";
 
 type Props = {
   h1: string;
@@ -8,8 +7,6 @@ type Props = {
 };
 
 function Box2({ h1, num, h2 }: Props) {
-  let num2 = 100 - num;
-
   return (
     <div className=" bg-white p-6 border-5 flex  flex-col items-center rounded-xl min-h-52 min-w-80 gap-1">
       <h1 className="text-xl font-semibold">{h1}</h1>

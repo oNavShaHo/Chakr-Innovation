@@ -50,7 +50,7 @@ function downsampleData(data: any, factor: any) {
     }
     //console.log(d[i][0],d[i][1]);
   }
-   console.log(aa);
+  console.log(aa);
   /// console.log(d);
   return aa;
 }
