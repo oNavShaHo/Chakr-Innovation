@@ -44,7 +44,7 @@ const Graph: React.FC = () => {
           {data ? (
             <ul>
               <div className="flex justify-between bg-white gap-4 p-6">
-                <h1>Growth</h1>
+                <h1 className="text-xl font-semibold ">Growth</h1>
                 <div className="flex">
                   <p>Yearly</p>
                   <img src="down.svg" alt="down" />
